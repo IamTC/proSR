@@ -5,9 +5,10 @@
 bit_version=$(uname -m)
 conda_installed=$(conda list | grep command)
 
-if [ $bit_version == "x86_64" ] && [ $conda_installed != 'command' ]; then
+if [ "$bit_version" == "x86_64" ] && [ $conda_installed != 'command' ]; then
     wget -nc https://repo.anaconda.com/miniconda/Miniconda3-latest-Linux-x86_64.sh
-    ./Miniconda3-latest-Linux-x86_64.sh
+    chmod +x ./Miniconda3-latest-Linux-x86_64.sh
+    ./Miniconda3-latest-Linux-x86_64.sh -b -f -p /usr/local
 fi
 
 ##########################
@@ -18,15 +19,15 @@ conda create -n proSR
 conda install -y torchvision scikit-image cython
 conda install -y pytorch=0.4.1 cuda91 -c pytorch
 conda install -y visdom dominate -c conda-forge
-python3.7 -m pip install easydict pillow
+python -m pip install easydict pillow
 
 ###################
 #   Update Path
 ###################
 
-PROJECT_ROOT="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
+# PROJECT_ROOT="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
 if [[! "$PYTHONPATH" == *"$PROJECT_ROOT"* ]]; then
-    export PYTHONPATH=$PROJECT_ROOT/lib:~/.local/lib/python3.7/site-packages:$PYTHONPATH
+    export PYTHONPATH=/content/proSR/lib:/usr/local/lib/python3.6/site-packages:$PYTHONPATH
 fi
 
 ###################
