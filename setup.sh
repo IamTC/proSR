@@ -25,7 +25,7 @@ python -m pip install easydict pillow
 #   Update Path
 ###################
 
-# PROJECT_ROOT="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
+PROJECT_ROOT=/content/proSR
 # if [[! "$PYTHONPATH" == *"$PROJECT_ROOT"* ]]; then
     export PYTHONPATH=/content/proSR/lib:/usr/local/lib/python3.6/site-packages:$PYTHONPATH
 # fi
