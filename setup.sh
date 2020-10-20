@@ -26,9 +26,9 @@ python -m pip install easydict pillow
 ###################
 
 # PROJECT_ROOT="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
-if [[! "$PYTHONPATH" == *"$PROJECT_ROOT"* ]]; then
+# if [[! "$PYTHONPATH" == *"$PROJECT_ROOT"* ]]; then
     export PYTHONPATH=/content/proSR/lib:/usr/local/lib/python3.6/site-packages:$PYTHONPATH
-fi
+# fi
 
 ###################
 #    Get Data
@@ -39,4 +39,4 @@ if [ ! -d $PROJECT_ROOT"/data/checkpoints" ] && [ ! -d $PROJECT_ROOT"/data/datas
 fi
 
 # example usage
-# python3.7 test.py -i ./data/datasets/B100/LR_bicubic/X2/38092x2.png -o ~/Pictures/proSR/ --checkpoint $PROJECT_ROOT/data/checkpoints/proSRGAN_x8.pth --scale 8 --cpu
+python test.py -i ./data/datasets/B100/LR_bicubic/X2/38092x2.png -o ~/Pictures/proSR/ --checkpoint $PROJECT_ROOT/data/checkpoints/proSRGAN_x8.pth --scale 8 --cpu

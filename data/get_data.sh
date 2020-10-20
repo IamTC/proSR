@@ -102,12 +102,12 @@ fi
 # fi
 
 # # Set14, Urban100, BSD100
-# Urban100=$(ls $DATADIR'/datasets' | grep Urban100)
-# Set14=$(ls $DATADIR'/datasets' | grep Set14)
-# BSD100=$(ls $DATADIR'/datasets' | grep BSD100)
-# if [ $Urban100 == '' ] && [ $Set14 == '' ] && [ $BSD100 == '' ]; then
-#     wget -nc https://cv.snu.ac.kr/research/EDSR/benchmark.tar -P /tmp
-#     tar -xvf /tmp/benchmark.tar -C /tmp --keep-newer-files
-#     mv /tmp/benchmark/* $DATADIR/datasets
-#     rm -rf /tmp/benchmark
-# fi
+Urban100=$(ls $DATADIR'/datasets' | grep Urban100)
+Set14=$(ls $DATADIR'/datasets' | grep Set14)
+BSD100=$(ls $DATADIR'/datasets' | grep BSD100)
+if [ "$Urban100" == '' ] && [ "$Set14" == '' ] && [ "$BSD100" == '' ]; then
+    wget -nc https://cv.snu.ac.kr/research/EDSR/benchmark.tar -P /tmp
+    tar -xvf /tmp/benchmark.tar -C /tmp --keep-newer-files
+    mv /tmp/benchmark/* $DATADIR/datasets
+    rm -rf /tmp/benchmark
+fi
