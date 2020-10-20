@@ -15,7 +15,7 @@ chmod +x ./Miniconda3-latest-Linux-x86_64.sh
 # Install conda packages #
 ##########################
 
-conda create -n proSR 
+conda create -n proSR python=3.6
 conda install -y torchvision scikit-image cython
 conda install -y pytorch=0.4.1 cuda91 -c pytorch
 conda install -y visdom dominate -c conda-forge
