@@ -5,11 +5,11 @@
 bit_version=$(uname -m)
 conda_installed=$(conda list | grep command)
 
-if [ "$bit_version" == "x86_64" ] && [ "$conda_installed" != 'command' ]; then
-    wget -nc https://repo.anaconda.com/miniconda/Miniconda3-latest-Linux-x86_64.sh
-    chmod +x ./Miniconda3-latest-Linux-x86_64.sh
-    ./Miniconda3-latest-Linux-x86_64.sh -b -f -p /usr/local
-fi
+# if [ "$bit_version" == "x86_64" ] && [ "$conda_installed" != 'command' ]; then
+wget -nc https://repo.anaconda.com/miniconda/Miniconda3-latest-Linux-x86_64.sh
+chmod +x ./Miniconda3-latest-Linux-x86_64.sh
+./Miniconda3-latest-Linux-x86_64.sh -b -f -p /usr/local
+# fi
 
 ##########################
 # Install conda packages #
