@@ -7,7 +7,7 @@ conda_installed=$(conda list | grep command)
 
 # if [ "$bit_version" == "x86_64" ] && [ "$conda_installed" != 'command' ]; then
 wget -nc https://repo.anaconda.com/miniconda/Miniconda3-3.6.0-Linux-x86_64.sh
-chmod +x ./Miniconda3-3.6.0-Linux-x86_64.sh.sh
+chmod +x ./Miniconda3-3.6.0-Linux-x86_64.sh
 ./Miniconda3-3.6.0-Linux-x86_64.sh -b -f -p /usr/local
 # fi
 
