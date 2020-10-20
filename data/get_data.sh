@@ -1,6 +1,6 @@
 #! /bin/bash
 
-DATADIR=/content/proSR/
+DATADIR=/content/proSR
 mkdir -p $DATADIR/datasets $DATADIR/checkpoints
 sudo apt -y install unzip
 
